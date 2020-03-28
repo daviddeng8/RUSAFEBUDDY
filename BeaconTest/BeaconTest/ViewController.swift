@@ -31,7 +31,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         label.textAlignment = .center
         
         initLocalBeacon()
-        updateDistance(.far, 46)
     }
     
     
@@ -56,28 +55,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         if beacons.count > 0 {
-            updateDistance(beacons[0].proximity, beacons[0].rssi)
+            updateDistance(beacons[0].rssi)
         } else {
-            updateDistance(.unknown, 0)
+            updateDistance(1)
         }
     }
 
-    func updateDistance(_ distance: CLProximity, _ rssi: Int) {
+    func updateDistance(_ rssi: Int) {
         UIView.animate(withDuration: 0.8) {
-            switch distance {
-            case .unknown:
+            if rssi == 1 {
                 self.view.backgroundColor = UIColor.gray
-
-            case .far:
+            } else if rssi < -66 {
                 self.view.backgroundColor = UIColor.blue
-                
-            case .near:
+            } else if rssi < -60 {
                 self.view.backgroundColor = UIColor.orange
-
-            case .immediate:
+            } else {
                 self.view.backgroundColor = UIColor.red
-            @unknown default:
-                fatalError()
             }
             
             self.label.text = "RSSI: \(rssi)"
