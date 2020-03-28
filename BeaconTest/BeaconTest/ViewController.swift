@@ -11,8 +11,9 @@ import UIKit
 import CoreBluetooth
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
-    
+//https://www.hackingwithswift.com/example-code/location/how-to-make-an-iphone-transmit-an-ibeacon
+
+class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDelegate {
     var locationManager: CLLocationManager!
 
     override func viewDidLoad() {
@@ -23,6 +24,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestAlwaysAuthorization() //requests location services
         
         //getCurrentLocation()
+        initLocalBeacon()
     }
     
     
@@ -70,6 +72,40 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             @unknown default:
                 fatalError()
             }
+        }
+    }
+    
+    
+    //CODE TO MAKE PHONE INTO A BEACON
+    
+    var localBeacon: CLBeaconRegion!
+    var beaconPeripheralData: NSDictionary!
+    var peripheralManager: CBPeripheralManager!
+
+    func initLocalBeacon() {
+        if localBeacon != nil {
+            stopLocalBeacon()
+        }
+
+        let uuid = UUID(uuidString: "3C5F9383-4ABC-4D7E-9396-193E28B44125")!
+        let localBeacon = CLBeaconRegion(proximityUUID: uuid, major: 123, minor: 456, identifier: "beacon")
+
+        beaconPeripheralData = localBeacon.peripheralData(withMeasuredPower: nil)
+        peripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: nil)
+    }
+
+    func stopLocalBeacon() {
+        peripheralManager.stopAdvertising()
+        peripheralManager = nil
+        beaconPeripheralData = nil
+        localBeacon = nil
+    }
+
+    func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
+        if peripheral.state == .poweredOn {
+            peripheralManager.startAdvertising(beaconPeripheralData as? [String: Any])
+        } else if peripheral.state == .poweredOff {
+            peripheralManager.stopAdvertising()
         }
     }
     
