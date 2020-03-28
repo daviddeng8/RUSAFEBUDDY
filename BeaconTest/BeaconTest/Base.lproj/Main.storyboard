@@ -43,7 +43,7 @@
         <!--You Are Safe View Controller-->
         <scene sceneID="KAP-5T-tEy">
             <objects>
-                <viewController id="Apg-b6-wXL" customClass="YouAreSafeViewController" customModule="BeaconTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Safe" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Apg-b6-wXL" customClass="YouAreSafeViewController" customModule="BeaconTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tQk-to-uVD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,7 +64,7 @@
         <!--You Are Slightly In Danger View Controller-->
         <scene sceneID="4G7-Fu-aSP">
             <objects>
-                <viewController id="Idk-P6-eFT" customClass="YouAreSlightlyInDangerViewController" customModule="BeaconTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SlightDanger" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Idk-P6-eFT" customClass="YouAreSlightlyInDangerViewController" customModule="BeaconTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nql-fr-vb8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,7 @@
         <!--You Are In Danger View Controller-->
         <scene sceneID="Nig-fq-LRX">
             <objects>
-                <viewController id="gJl-GB-YnT" customClass="YouAreInDangerViewController" customModule="BeaconTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Danger" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gJl-GB-YnT" customClass="YouAreInDangerViewController" customModule="BeaconTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DIw-yg-smU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
