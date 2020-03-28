@@ -15,6 +15,7 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDelegate {
     var locationManager: CLLocationManager!
+    var label: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         locationManager.requestAlwaysAuthorization() //requests location services
         
         //getCurrentLocation()
+        
+        label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+        label.center = CGPoint(x: 160, y: 285)
+        label.textAlignment = .center
+        
         initLocalBeacon()
+        updateDistance(.far, 46)
     }
     
     
@@ -49,13 +56,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         if beacons.count > 0 {
-            updateDistance(beacons[0].proximity)
+            updateDistance(beacons[0].proximity, beacons[0].rssi)
         } else {
-            updateDistance(.unknown)
+            updateDistance(.unknown, 0)
         }
     }
 
-    func updateDistance(_ distance: CLProximity) {
+    func updateDistance(_ distance: CLProximity, _ rssi: Int) {
         UIView.animate(withDuration: 0.8) {
             switch distance {
             case .unknown:
@@ -63,7 +70,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
 
             case .far:
                 self.view.backgroundColor = UIColor.blue
-
+                
             case .near:
                 self.view.backgroundColor = UIColor.orange
 
@@ -72,6 +79,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
             @unknown default:
                 fatalError()
             }
+            
+            self.label.text = "RSSI: \(rssi)"
+            self.view.addSubview(self.label)
         }
     }
     
