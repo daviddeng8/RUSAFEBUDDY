@@ -18,11 +18,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     var label: UILabel!
 
     
+    
     @IBAction func startScanning(_ sender: UIButton) {
         
         //getCurrentLocation()
         print ("hi")
+        label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+        label.center = CGPoint(x: 160, y: 285)
+        label.textAlignment = .center
         
+        initLocalBeacon()
     }
     
     
@@ -33,11 +38,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization() //requests location services
         
-        label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+        /*label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
         label.center = CGPoint(x: 160, y: 285)
         label.textAlignment = .center
         
-        initLocalBeacon()
+        initLocalBeacon()*/
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -72,6 +77,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         let vc2 = YouAreSlightlyInDangerViewController()
         let vc3 = YouAreInDangerViewController()*/
         
+        UIView.animate(withDuration: 0.8, animations: {
+            if rssi == 1 {
+                self.view.backgroundColor = UIColor.gray
+            } else if rssi < -66 {
+                self.view.backgroundColor = UIColor.blue
+                //self.present(YouAreSafeViewController(), animated: true, completion: nil)
+            //self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
+            } else if rssi < -60 {
+                self.view.backgroundColor = UIColor.orange
+               // self.present(YouAreSlightlyInDangerViewController(), animated: true, completion: nil)
+                //self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
+            } else {
+                self.view.backgroundColor = UIColor.red
+                //self.present(YouAreInDangerViewController(), animated: true, completion: nil)
+                //self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
+            }
+            
+            self.label.text = "RSSI: \(rssi)"
+            self.view.addSubview(self.label)
+        })
+        
+        /*
         UIView.animate(withDuration: 0.8) {
             if rssi == 1 {
                 self.view.backgroundColor = UIColor.gray
@@ -91,7 +118,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
             
             self.label.text = "RSSI: \(rssi)"
             self.view.addSubview(self.label)
-        }
+        }*/
     }
     
     
