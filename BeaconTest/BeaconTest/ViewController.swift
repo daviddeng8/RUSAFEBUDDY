@@ -16,13 +16,9 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDelegate {
     var locationManager: CLLocationManager!
     var label: UILabel!
-    var buttonPressed = false
+
     
     @IBAction func startScanning(_ sender: UIButton) {
-        buttonPressed = true
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization() //requests location services
         
         //getCurrentLocation()
         
@@ -37,9 +33,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization() //requests location services
     }
-    
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedAlways {
@@ -69,15 +66,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     }
 
     func updateDistance(_ rssi: Int) {
+        /*let vc1 = YouAreSafeViewController()
+        let vc2 = YouAreSlightlyInDangerViewController()
+        let vc3 = YouAreInDangerViewController()*/
+        
         UIView.animate(withDuration: 0.8) {
             if rssi == 1 {
                 self.view.backgroundColor = UIColor.gray
             } else if rssi < -66 {
-                self.view.backgroundColor = UIColor.blue
+                //self.view.backgroundColor = UIColor.blue
+                self.present(YouAreSafeViewController(), animated: true, completion: nil)
             } else if rssi < -60 {
-                self.view.backgroundColor = UIColor.orange
+                //self.view.backgroundColor = UIColor.orange
+                self.present(YouAreSlightlyInDangerViewController(), animated: true, completion: nil)
             } else {
-                self.view.backgroundColor = UIColor.red
+                //self.view.backgroundColor = UIColor.red
+                self.present(YouAreInDangerViewController(), animated: true, completion: nil)
             }
             
             self.label.text = "RSSI: \(rssi)"

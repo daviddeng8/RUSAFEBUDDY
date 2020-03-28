@@ -15,6 +15,9 @@
 		A99BE0AC242EBD17002AF98D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99BE0AA242EBD17002AF98D /* LaunchScreen.storyboard */; };
 		A99BE0B7242EBD18002AF98D /* BeaconTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BE0B6242EBD18002AF98D /* BeaconTestTests.swift */; };
 		A99BE0C2242EBD18002AF98D /* BeaconTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BE0C1242EBD18002AF98D /* BeaconTestUITests.swift */; };
+		A9C7CAAB242FF19300FDDA72 /* YouAreSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAAA242FF19300FDDA72 /* YouAreSafeViewController.swift */; };
+		A9C7CAAD242FF7F400FDDA72 /* YouAreSlightlyInDangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAAC242FF7F400FDDA72 /* YouAreSlightlyInDangerViewController.swift */; };
+		A9C7CAAF242FF8B800FDDA72 /* YouAreInDangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAAE242FF8B800FDDA72 /* YouAreInDangerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		A99BE0BD242EBD18002AF98D /* BeaconTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeaconTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99BE0C1242EBD18002AF98D /* BeaconTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTestUITests.swift; sourceTree = "<group>"; };
 		A99BE0C3242EBD18002AF98D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9C7CAAA242FF19300FDDA72 /* YouAreSafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouAreSafeViewController.swift; sourceTree = "<group>"; };
+		A9C7CAAC242FF7F400FDDA72 /* YouAreSlightlyInDangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouAreSlightlyInDangerViewController.swift; sourceTree = "<group>"; };
+		A9C7CAAE242FF8B800FDDA72 /* YouAreInDangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouAreInDangerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +106,12 @@
 			isa = PBXGroup;
 			children = (
 				A99BE09F242EBD16002AF98D /* AppDelegate.swift */,
+				A9C7CAAA242FF19300FDDA72 /* YouAreSafeViewController.swift */,
 				A99BE0A1242EBD16002AF98D /* SceneDelegate.swift */,
 				A99BE0A3242EBD16002AF98D /* ViewController.swift */,
 				A99BE0A5242EBD16002AF98D /* Main.storyboard */,
+				A9C7CAAC242FF7F400FDDA72 /* YouAreSlightlyInDangerViewController.swift */,
+				A9C7CAAE242FF8B800FDDA72 /* YouAreInDangerViewController.swift */,
 				A99BE0A8242EBD17002AF98D /* Assets.xcassets */,
 				A99BE0AA242EBD17002AF98D /* LaunchScreen.storyboard */,
 				A99BE0AD242EBD17002AF98D /* Info.plist */,
@@ -259,7 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C7CAAB242FF19300FDDA72 /* YouAreSafeViewController.swift in Sources */,
+				A9C7CAAF242FF8B800FDDA72 /* YouAreInDangerViewController.swift in Sources */,
 				A99BE0A4242EBD16002AF98D /* ViewController.swift in Sources */,
+				A9C7CAAD242FF7F400FDDA72 /* YouAreSlightlyInDangerViewController.swift in Sources */,
 				A99BE0A0242EBD16002AF98D /* AppDelegate.swift in Sources */,
 				A99BE0A2242EBD16002AF98D /* SceneDelegate.swift in Sources */,
 			);
