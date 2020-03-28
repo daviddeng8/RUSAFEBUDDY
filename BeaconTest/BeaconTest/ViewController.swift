@@ -20,12 +20,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     
     @IBAction func startScanning(_ sender: UIButton) {
         buttonPressed = true
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization() //requests location services
@@ -37,6 +31,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         label.textAlignment = .center
         
         initLocalBeacon()
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
     }
     
     
