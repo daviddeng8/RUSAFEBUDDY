@@ -16,7 +16,13 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDelegate {
     var locationManager: CLLocationManager!
     var label: UILabel!
-
+    var buttonPressed = false
+    
+    @IBAction func startScanning(_ sender: UIButton) {
+        buttonPressed = true
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -111,6 +117,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
             peripheralManager.stopAdvertising()
         }
     }
+    
     
 }
 
