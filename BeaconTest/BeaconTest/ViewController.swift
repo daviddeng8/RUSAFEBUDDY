@@ -16,18 +16,12 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDelegate {
     var locationManager: CLLocationManager!
     var label: UILabel!
-
-    
     
     @IBAction func startScanning(_ sender: UIButton) {
         
         //getCurrentLocation()
         print ("hi")
-        label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.center = CGPoint(x: 160, y: 285)
-        label.textAlignment = .center
         
-        initLocalBeacon()
     }
     
     
@@ -80,18 +74,34 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         UIView.animate(withDuration: 0.8, animations: {
             if rssi == 1 {
                 self.view.backgroundColor = UIColor.gray
+                let YouAreSafeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Safe") as! YouAreSafeViewController
+
+            self.navigationController?.pushViewController(YouAreSafeViewController, animated: true)
             } else if rssi < -66 {
-                self.view.backgroundColor = UIColor.blue
+                //self.view.backgroundColor = UIColor.blue
                 //self.present(YouAreSafeViewController(), animated: true, completion: nil)
             //self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
+                
+                let YouAreSafeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Safe") as! YouAreSafeViewController
+
+                self.navigationController?.pushViewController(YouAreSafeViewController, animated: true)
+                
             } else if rssi < -60 {
-                self.view.backgroundColor = UIColor.orange
+                //self.view.backgroundColor = UIColor.orange
                // self.present(YouAreSlightlyInDangerViewController(), animated: true, completion: nil)
                 //self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
+                
+                let YouAreSlightlyInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "YouAreSlightlyInDangerViewController") as! YouAreSlightlyInDangerViewController
+
+                self.navigationController?.pushViewController(YouAreSlightlyInDangerViewController, animated: true)
             } else {
-                self.view.backgroundColor = UIColor.red
+                //self.view.backgroundColor = UIColor.red
                 //self.present(YouAreInDangerViewController(), animated: true, completion: nil)
                 //self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
+                
+                let YouAreInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "YouAreInDangerViewController") as! YouAreInDangerViewController
+
+                self.navigationController?.pushViewController(YouAreInDangerViewController, animated: true)
             }
             
             self.label.text = "RSSI: \(rssi)"
