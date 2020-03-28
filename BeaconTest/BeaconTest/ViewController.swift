@@ -75,13 +75,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                 self.view.backgroundColor = UIColor.gray
             } else if rssi < -66 {
                 //self.view.backgroundColor = UIColor.blue
-                self.present(YouAreSafeViewController(), animated: true, completion: nil)
+                //self.present(YouAreSafeViewController(), animated: true, completion: nil)
+                self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
             } else if rssi < -60 {
                 //self.view.backgroundColor = UIColor.orange
-                self.present(YouAreSlightlyInDangerViewController(), animated: true, completion: nil)
+               // self.present(YouAreSlightlyInDangerViewController(), animated: true, completion: nil)
+                self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
             } else {
                 //self.view.backgroundColor = UIColor.red
-                self.present(YouAreInDangerViewController(), animated: true, completion: nil)
+                //self.present(YouAreInDangerViewController(), animated: true, completion: nil)
+                self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
             }
             
             self.label.text = "RSSI: \(rssi)"
