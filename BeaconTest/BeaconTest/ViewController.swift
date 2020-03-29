@@ -67,7 +67,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         if leftHome {
             if beacons.count > 0 {
-                updateDistance(beacons[0].rssi)
+                var temp = beacons[0]
+                for elem in beacons {
+                    if elem.rssi > temp.rssi {
+                        temp = elem
+                    }
+                }
+                updateDistance(temp.rssi)
             } else {
                 updateDistance(1)
             }
