@@ -28,14 +28,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     @IBAction func startScanning(_ sender: UIButton) {
         //getCurrentLocation()
         if (!leftHome) {
-            print("tapped on home screen")
             leftHome = true
-        }
-        if self.navigationController == nil {
-            print ("sucks")
-        }
-        else {
-            print ("swallows")
         }
     }
     
@@ -78,7 +71,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        print("test")
         if status == .authorizedAlways {
             if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
                 if CLLocationManager.isRangingAvailable() {
@@ -138,7 +130,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                 }
                 
                    
-            } else if rssi < -66 {
+            } else if rssi < -70 || (rssi < 65 && curState == 0) {
                 if self.curState != 1 {
                     //self.dismiss(animated: true, completion: nil)
                     self.view.backgroundColor = UIColor.blue
@@ -158,7 +150,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                 //self.present(YouAreSafeViewController(), animated: true, completion: nil)
             //self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
                 
-            } else if rssi < -60 {
+            } else if rssi < -63 && (rssi > -67 || curState == 0)  {
                 if self.curState != 2 {
                     //self.dismiss(animated: true, completion: nil)
                     self.view.backgroundColor = UIColor.orange
@@ -179,7 +171,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                
                // self.present(YouAreSlightlyInDangerViewController(), animated: true, completion: nil)
                 //self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
-            } else {
+            } else if rssi > -60 || curState == 0 {
                 if self.curState != 3 {
                     //self.dismiss(animated: true, completion: nil)
                     self.view.backgroundColor = UIColor.red
