@@ -28,3 +28,10 @@ git clone https://github.com/daviddeng8/r-u-safe-buddy.git
 * Open "Xcode Project" directory in Xcode and you are good to go!
 
 *Note: this project will not run using the Xcode simulator, as it requires Bluetooth/Location features unsupported by the simulator. To run the project, connect a supported iOS device to your computer and launch the app on that device. When the device prompts you to turn on location usage, tap allow.*
+
+## Contributors
+* David Deng
+* Rishi Sankar
+* Angela Lu
+* Ray Huang
+* Justin Li
