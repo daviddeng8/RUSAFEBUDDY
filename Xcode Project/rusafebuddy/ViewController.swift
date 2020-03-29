@@ -121,10 +121,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         self.currentViewController = futureVC
     }
 
-    var rssiBound1 = -50
-    var rssiBound2 = -53
-    var rssiBound3 = -57
-    var rssiBound4 = -60
+    //Experimental RSSI values (decibels) shown to approximate the desired 6-foot range
+    //Potential future work - add calibration feature for each device
+    var rssiBound1 = -44
+    var rssiBound2 = -47
+    var rssiBound3 = -51
+    var rssiBound4 = -54
     
     func updateDistance(_ rssi: Int) {
         //Display "no buddies found" page if no beacons detected (rssi == 1)
