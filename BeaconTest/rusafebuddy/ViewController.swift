@@ -1,30 +1,38 @@
-//
-//  ViewController.swift
-//  BeaconTest
-//
-//  Created by David Deng on 3/27/20.
-//  Copyright © 2020 David Deng. All rights reserved.
-//
+/*
+
+r u safe, buddy?
+ViewController.swift
+
+Created for LAHacks 2020 - March 28-29, 2020
+
+Contributors:
+- David Deng
+- Rishi Sankar
+- Angela Lu
+- Justin Li
+- Ray Huang
+
+*/
+
 import UIKit
 
 import CoreBluetooth
 import CoreLocation
 import AVFoundation
 
-//https://www.hackingwithswift.com/example-code/location/how-to-make-an-iphone-transmit-an-ibeacon
 class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDelegate {
     var locationManager: CLLocationManager!
-    //var label: UILabel!
-    var curState = -1
     
-    var leftHome = false
     var homeSoundEffect: AVAudioPlayer?
     var safeSoundEffect: AVAudioPlayer?
     var dangerSoundEffect: AVAudioPlayer?
     var slightDangerSoundEffect: AVAudioPlayer?
     
     var currentViewController: UIViewController!
+    var curState = -1
+    var leftHome = false
     
+    //UIButton to trigger scanning when the home screen is pressed
     @IBAction func startScanning(_ sender: UIButton) {
         //getCurrentLocation()
         if (!leftHome) {
@@ -32,40 +40,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         currentViewController = self
         // Do any additional setup after loading the view.
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization() //requests location services
         
-//        label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-//        label.center = CGPoint(x: 160, y: 285)
-//        label.textAlignment = .center
-        
+        //Load Sound Effects as AVAudioPlayer
         let path1 = Bundle.main.path(forResource: "homeSound.m4a", ofType:nil)!
         let url1 = URL(fileURLWithPath: path1)
-        
         let path2 = Bundle.main.path(forResource: "safe.m4a", ofType:nil)!
         let url2 = URL(fileURLWithPath: path2)
-        
         let path3 = Bundle.main.path(forResource: "slightdanger.m4a", ofType:nil)!
         let url3 = URL(fileURLWithPath: path3)
-        
         let path4 = Bundle.main.path(forResource: "danger.m4a", ofType:nil)!
         let url4 = URL(fileURLWithPath: path4)
-        
         do {
             homeSoundEffect = try AVAudioPlayer(contentsOf: url1)
             safeSoundEffect = try AVAudioPlayer(contentsOf: url2)
             slightDangerSoundEffect = try AVAudioPlayer(contentsOf: url3)
             dangerSoundEffect = try AVAudioPlayer(contentsOf: url4)
             homeSoundEffect?.play()
-        } catch {
-            
-        }
+        } catch { }
         
         initLocalBeacon()
     }

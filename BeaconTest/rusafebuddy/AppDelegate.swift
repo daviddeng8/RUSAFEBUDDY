@@ -1,10 +1,18 @@
-//
-//  AppDelegate.swift
-//  BeaconTest
-//
-//  Created by David Deng on 3/27/20.
-//  Copyright © 2020 David Deng. All rights reserved.
-//
+/*
+
+r u safe, buddy?
+AppDelegate.swift
+
+Created for LAHacks 2020 - March 28-29, 2020
+
+Contributors:
+- David Deng
+- Rishi Sankar
+- Angela Lu
+- Justin Li
+- Ray Huang
+
+*/
 
 import UIKit
 

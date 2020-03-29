@@ -13,8 +13,6 @@
 		A99BE0A7242EBD16002AF98D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99BE0A5242EBD16002AF98D /* Main.storyboard */; };
 		A99BE0A9242EBD17002AF98D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99BE0A8242EBD17002AF98D /* Assets.xcassets */; };
 		A99BE0AC242EBD17002AF98D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99BE0AA242EBD17002AF98D /* LaunchScreen.storyboard */; };
-		A99BE0B7242EBD18002AF98D /* BeaconTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BE0B6242EBD18002AF98D /* BeaconTestTests.swift */; };
-		A99BE0C2242EBD18002AF98D /* BeaconTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BE0C1242EBD18002AF98D /* BeaconTestUITests.swift */; };
 		A9C7CAAB242FF19300FDDA72 /* YouAreSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAAA242FF19300FDDA72 /* YouAreSafeViewController.swift */; };
 		A9C7CAAD242FF7F400FDDA72 /* YouAreSlightlyInDangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAAC242FF7F400FDDA72 /* YouAreSlightlyInDangerViewController.swift */; };
 		A9C7CAAF242FF8B800FDDA72 /* YouAreInDangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAAE242FF8B800FDDA72 /* YouAreInDangerViewController.swift */; };
@@ -52,12 +50,8 @@
 		A99BE0A8242EBD17002AF98D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A99BE0AB242EBD17002AF98D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A99BE0AD242EBD17002AF98D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A99BE0B2242EBD18002AF98D /* BeaconTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeaconTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A99BE0B6242EBD18002AF98D /* BeaconTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTestTests.swift; sourceTree = "<group>"; };
-		A99BE0B8242EBD18002AF98D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A99BE0BD242EBD18002AF98D /* BeaconTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeaconTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A99BE0C1242EBD18002AF98D /* BeaconTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTestUITests.swift; sourceTree = "<group>"; };
-		A99BE0C3242EBD18002AF98D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A99BE0B2242EBD18002AF98D /* rusafebuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rusafebuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A99BE0BD242EBD18002AF98D /* rusafebuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rusafebuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C7CAAA242FF19300FDDA72 /* YouAreSafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouAreSafeViewController.swift; sourceTree = "<group>"; };
 		A9C7CAAC242FF7F400FDDA72 /* YouAreSlightlyInDangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouAreSlightlyInDangerViewController.swift; sourceTree = "<group>"; };
 		A9C7CAAE242FF8B800FDDA72 /* YouAreInDangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouAreInDangerViewController.swift; sourceTree = "<group>"; };
@@ -97,9 +91,7 @@
 		A99BE093242EBD15002AF98D = {
 			isa = PBXGroup;
 			children = (
-				A99BE09E242EBD15002AF98D /* BeaconTest */,
-				A99BE0B5242EBD18002AF98D /* BeaconTestTests */,
-				A99BE0C0242EBD18002AF98D /* BeaconTestUITests */,
+				A99BE09E242EBD15002AF98D /* rusafebuddy */,
 				A99BE09D242EBD15002AF98D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,13 +100,13 @@
 			isa = PBXGroup;
 			children = (
 				A99BE09C242EBD15002AF98D /* u safe, buddy?.app */,
-				A99BE0B2242EBD18002AF98D /* BeaconTestTests.xctest */,
-				A99BE0BD242EBD18002AF98D /* BeaconTestUITests.xctest */,
+				A99BE0B2242EBD18002AF98D /* rusafebuddyTests.xctest */,
+				A99BE0BD242EBD18002AF98D /* rusafebuddyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A99BE09E242EBD15002AF98D /* BeaconTest */ = {
+		A99BE09E242EBD15002AF98D /* rusafebuddy */ = {
 			isa = PBXGroup;
 			children = (
 				A9C7CAB424304E0800FDDA72 /* Sounds */,
@@ -130,25 +122,7 @@
 				A99BE0AA242EBD17002AF98D /* LaunchScreen.storyboard */,
 				A99BE0AD242EBD17002AF98D /* Info.plist */,
 			);
-			path = BeaconTest;
-			sourceTree = "<group>";
-		};
-		A99BE0B5242EBD18002AF98D /* BeaconTestTests */ = {
-			isa = PBXGroup;
-			children = (
-				A99BE0B6242EBD18002AF98D /* BeaconTestTests.swift */,
-				A99BE0B8242EBD18002AF98D /* Info.plist */,
-			);
-			path = BeaconTestTests;
-			sourceTree = "<group>";
-		};
-		A99BE0C0242EBD18002AF98D /* BeaconTestUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A99BE0C1242EBD18002AF98D /* BeaconTestUITests.swift */,
-				A99BE0C3242EBD18002AF98D /* Info.plist */,
-			);
-			path = BeaconTestUITests;
+			path = rusafebuddy;
 			sourceTree = "<group>";
 		};
 		A9C7CAB424304E0800FDDA72 /* Sounds */ = {
@@ -166,9 +140,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A99BE09B242EBD15002AF98D /* BeaconTest */ = {
+		A99BE09B242EBD15002AF98D /* rusafebuddy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A99BE0C6242EBD18002AF98D /* Build configuration list for PBXNativeTarget "BeaconTest" */;
+			buildConfigurationList = A99BE0C6242EBD18002AF98D /* Build configuration list for PBXNativeTarget "rusafebuddy" */;
 			buildPhases = (
 				A99BE098242EBD15002AF98D /* Sources */,
 				A99BE099242EBD15002AF98D /* Frameworks */,
@@ -178,14 +152,14 @@
 			);
 			dependencies = (
 			);
-			name = BeaconTest;
+			name = rusafebuddy;
 			productName = BeaconTest;
 			productReference = A99BE09C242EBD15002AF98D /* u safe, buddy?.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A99BE0B1242EBD18002AF98D /* BeaconTestTests */ = {
+		A99BE0B1242EBD18002AF98D /* rusafebuddyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A99BE0C9242EBD18002AF98D /* Build configuration list for PBXNativeTarget "BeaconTestTests" */;
+			buildConfigurationList = A99BE0C9242EBD18002AF98D /* Build configuration list for PBXNativeTarget "rusafebuddyTests" */;
 			buildPhases = (
 				A99BE0AE242EBD18002AF98D /* Sources */,
 				A99BE0AF242EBD18002AF98D /* Frameworks */,
@@ -196,14 +170,14 @@
 			dependencies = (
 				A99BE0B4242EBD18002AF98D /* PBXTargetDependency */,
 			);
-			name = BeaconTestTests;
+			name = rusafebuddyTests;
 			productName = BeaconTestTests;
-			productReference = A99BE0B2242EBD18002AF98D /* BeaconTestTests.xctest */;
+			productReference = A99BE0B2242EBD18002AF98D /* rusafebuddyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A99BE0BC242EBD18002AF98D /* BeaconTestUITests */ = {
+		A99BE0BC242EBD18002AF98D /* rusafebuddyUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A99BE0CC242EBD18002AF98D /* Build configuration list for PBXNativeTarget "BeaconTestUITests" */;
+			buildConfigurationList = A99BE0CC242EBD18002AF98D /* Build configuration list for PBXNativeTarget "rusafebuddyUITests" */;
 			buildPhases = (
 				A99BE0B9242EBD18002AF98D /* Sources */,
 				A99BE0BA242EBD18002AF98D /* Frameworks */,
@@ -214,9 +188,9 @@
 			dependencies = (
 				A99BE0BF242EBD18002AF98D /* PBXTargetDependency */,
 			);
-			name = BeaconTestUITests;
+			name = rusafebuddyUITests;
 			productName = BeaconTestUITests;
-			productReference = A99BE0BD242EBD18002AF98D /* BeaconTestUITests.xctest */;
+			productReference = A99BE0BD242EBD18002AF98D /* rusafebuddyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -242,7 +216,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A99BE097242EBD15002AF98D /* Build configuration list for PBXProject "BeaconTest" */;
+			buildConfigurationList = A99BE097242EBD15002AF98D /* Build configuration list for PBXProject "rusafebuddy" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -255,9 +229,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A99BE09B242EBD15002AF98D /* BeaconTest */,
-				A99BE0B1242EBD18002AF98D /* BeaconTestTests */,
-				A99BE0BC242EBD18002AF98D /* BeaconTestUITests */,
+				A99BE09B242EBD15002AF98D /* rusafebuddy */,
+				A99BE0B1242EBD18002AF98D /* rusafebuddyTests */,
+				A99BE0BC242EBD18002AF98D /* rusafebuddyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -313,7 +287,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A99BE0B7242EBD18002AF98D /* BeaconTestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +294,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A99BE0C2242EBD18002AF98D /* BeaconTestUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,12 +302,12 @@
 /* Begin PBXTargetDependency section */
 		A99BE0B4242EBD18002AF98D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A99BE09B242EBD15002AF98D /* BeaconTest */;
+			target = A99BE09B242EBD15002AF98D /* rusafebuddy */;
 			targetProxy = A99BE0B3242EBD18002AF98D /* PBXContainerItemProxy */;
 		};
 		A99BE0BF242EBD18002AF98D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A99BE09B242EBD15002AF98D /* BeaconTest */;
+			target = A99BE09B242EBD15002AF98D /* rusafebuddy */;
 			targetProxy = A99BE0BE242EBD18002AF98D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -480,7 +452,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5K9Y4HMG96;
-				INFOPLIST_FILE = BeaconTest/Info.plist;
+				INFOPLIST_FILE = rusafebuddy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,7 +470,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5K9Y4HMG96;
-				INFOPLIST_FILE = BeaconTest/Info.plist;
+				INFOPLIST_FILE = rusafebuddy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -527,7 +499,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeaconTest.app/BeaconTest";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rusafebuddy.app/rusafebuddy";
 			};
 			name = Debug;
 		};
@@ -548,7 +520,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeaconTest.app/BeaconTest";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rusafebuddy.app/rusafebuddy";
 			};
 			name = Release;
 		};
@@ -593,7 +565,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A99BE097242EBD15002AF98D /* Build configuration list for PBXProject "BeaconTest" */ = {
+		A99BE097242EBD15002AF98D /* Build configuration list for PBXProject "rusafebuddy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A99BE0C4242EBD18002AF98D /* Debug */,
@@ -602,7 +574,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A99BE0C6242EBD18002AF98D /* Build configuration list for PBXNativeTarget "BeaconTest" */ = {
+		A99BE0C6242EBD18002AF98D /* Build configuration list for PBXNativeTarget "rusafebuddy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A99BE0C7242EBD18002AF98D /* Debug */,
@@ -611,7 +583,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A99BE0C9242EBD18002AF98D /* Build configuration list for PBXNativeTarget "BeaconTestTests" */ = {
+		A99BE0C9242EBD18002AF98D /* Build configuration list for PBXNativeTarget "rusafebuddyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A99BE0CA242EBD18002AF98D /* Debug */,
@@ -620,7 +592,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A99BE0CC242EBD18002AF98D /* Build configuration list for PBXNativeTarget "BeaconTestUITests" */ = {
+		A99BE0CC242EBD18002AF98D /* Build configuration list for PBXNativeTarget "rusafebuddyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A99BE0CD242EBD18002AF98D /* Debug */,
