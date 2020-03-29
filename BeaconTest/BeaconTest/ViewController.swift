@@ -16,9 +16,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     var label: UILabel!
     var curState = 0
     
+    var leftHome = false
+    
     @IBAction func startScanning(_ sender: UIButton) {
         //getCurrentLocation()
-        print ("hi")
+        if (!leftHome) {
+            print("tapped on home screen")
+            leftHome = true
+        }
+        
+        
     }
     
     
@@ -58,11 +65,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     }
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-        print ("test2")
-        if beacons.count > 0 {
-            updateDistance(beacons[0].rssi)
-        } else {
-            updateDistance(1)
+        if leftHome {
+            if beacons.count > 0 {
+                updateDistance(beacons[0].rssi)
+            } else {
+                updateDistance(1)
+            }
         }
     }
 
