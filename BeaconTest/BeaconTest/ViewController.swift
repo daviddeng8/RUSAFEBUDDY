@@ -124,7 +124,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
             if rssi == 1 {
                 if self.curState != 0 {
                     self.view.backgroundColor = UIColor.gray
-                    self.dismiss(animated: true, completion: nil)
+                    //self.dismiss(animated: true, completion: nil)
                     self.curState = 0
                     let NoBuddiesFoundViewController = self.storyboard?.instantiateViewController(withIdentifier: "NoBuddies") as! NoBuddiesFoundViewController
                     NoBuddiesFoundViewController.isModalInPresentation = true
@@ -140,7 +140,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                    
             } else if rssi < -66 {
                 if self.curState != 1 {
-                    self.dismiss(animated: true, completion: nil)
+                    //self.dismiss(animated: true, completion: nil)
                     self.view.backgroundColor = UIColor.blue
                     let YouAreSafeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Safe") as! YouAreSafeViewController
                     YouAreSafeViewController.isModalInPresentation = true
@@ -160,7 +160,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                 
             } else if rssi < -60 {
                 if self.curState != 2 {
-                    self.dismiss(animated: true, completion: nil)
+                    //self.dismiss(animated: true, completion: nil)
                     self.view.backgroundColor = UIColor.orange
                     let YouAreSlightlyInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "SlightDanger") as! YouAreSlightlyInDangerViewController
                     YouAreSlightlyInDangerViewController.isModalInPresentation = true
@@ -181,7 +181,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                 //self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
             } else {
                 if self.curState != 3 {
-                    self.dismiss(animated: true, completion: nil)
+                    //self.dismiss(animated: true, completion: nil)
                     self.view.backgroundColor = UIColor.red
                     let YouAreInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "Danger") as! YouAreInDangerViewController
                     YouAreInDangerViewController.isModalInPresentation = true
