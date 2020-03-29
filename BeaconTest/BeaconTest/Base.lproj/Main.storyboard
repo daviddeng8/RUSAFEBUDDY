@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F5Y-Au-5j4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -10,13 +10,13 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BeaconTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="u_safe__buddy_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHU-VR-qJq">
-                                <rect key="frame" x="-55" y="-15" width="520" height="924"/>
+                                <rect key="frame" x="-53" y="-14" width="520" height="924"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="Image"/>
                                 <connections>
@@ -36,9 +36,9 @@
         <!--You Are Safe View Controller-->
         <scene sceneID="KAP-5T-tEy">
             <objects>
-                <viewController storyboardIdentifier="Safe" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Apg-b6-wXL" customClass="YouAreSafeViewController" customModule="BeaconTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Safe" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Apg-b6-wXL" customClass="YouAreSafeViewController" customModule="u_safe__buddy_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tQk-to-uVD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="it1-4f-vIe">
@@ -58,9 +58,9 @@
         <!--You Are Slightly In Danger View Controller-->
         <scene sceneID="4G7-Fu-aSP">
             <objects>
-                <viewController storyboardIdentifier="SlightDanger" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Idk-P6-eFT" customClass="YouAreSlightlyInDangerViewController" customModule="BeaconTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SlightDanger" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Idk-P6-eFT" customClass="YouAreSlightlyInDangerViewController" customModule="u_safe__buddy_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nql-fr-vb8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Image-2" translatesAutoresizingMaskIntoConstraints="NO" id="sRq-OH-eDX">
@@ -80,9 +80,9 @@
         <!--You Are In Danger View Controller-->
         <scene sceneID="Nig-fq-LRX">
             <objects>
-                <viewController storyboardIdentifier="Danger" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gJl-GB-YnT" customClass="YouAreInDangerViewController" customModule="BeaconTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Danger" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gJl-GB-YnT" customClass="YouAreInDangerViewController" customModule="u_safe__buddy_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DIw-yg-smU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Image-3" translatesAutoresizingMaskIntoConstraints="NO" id="mwE-Ah-hXZ">
@@ -102,9 +102,9 @@
         <!--No Buddies Found View Controller-->
         <scene sceneID="HdW-jf-4ea">
             <objects>
-                <viewController storyboardIdentifier="NoBuddies" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MZI-UU-nYd" customClass="NoBuddiesFoundViewController" customModule="BeaconTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoBuddies" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MZI-UU-nYd" customClass="NoBuddiesFoundViewController" customModule="u_safe__buddy_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rjZ-gg-vdi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Image-4" translatesAutoresizingMaskIntoConstraints="NO" id="4am-oC-Xlq">
@@ -120,28 +120,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vcg-vw-IhI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="90" y="-553"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="7ZW-3x-P9K">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F5Y-Au-5j4" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="B1S-id-8Te">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fie-Zo-99x"/>
-                        <segue destination="MZI-UU-nYd" kind="show" id="jOE-37-yRC"/>
-                        <segue destination="Apg-b6-wXL" kind="show" id="LCq-lT-LKp"/>
-                        <segue destination="Idk-P6-eFT" kind="show" id="poK-1j-3eI"/>
-                        <segue destination="gJl-GB-YnT" kind="show" id="ckc-ma-AL6"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nvn-uq-hvW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="120.53571428571428"/>
         </scene>
     </scenes>
     <resources>
