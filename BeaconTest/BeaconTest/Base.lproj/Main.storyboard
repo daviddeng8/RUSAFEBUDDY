@@ -38,7 +38,7 @@
             <objects>
                 <viewController storyboardIdentifier="Safe" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Apg-b6-wXL" customClass="YouAreSafeViewController" customModule="BeaconTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tQk-to-uVD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="it1-4f-vIe">
@@ -60,7 +60,7 @@
             <objects>
                 <viewController storyboardIdentifier="SlightDanger" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Idk-P6-eFT" customClass="YouAreSlightlyInDangerViewController" customModule="BeaconTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nql-fr-vb8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Image-2" translatesAutoresizingMaskIntoConstraints="NO" id="sRq-OH-eDX">
@@ -71,6 +71,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="XpP-Ps-HL2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="MVz-V1-uow"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXd-Uk-T5W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,7 +82,7 @@
             <objects>
                 <viewController storyboardIdentifier="Danger" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gJl-GB-YnT" customClass="YouAreInDangerViewController" customModule="BeaconTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DIw-yg-smU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Image-3" translatesAutoresizingMaskIntoConstraints="NO" id="mwE-Ah-hXZ">
@@ -92,6 +93,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="YSW-LF-Eza"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jU5-Co-ryD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tvv-Nn-pFQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,7 +104,7 @@
             <objects>
                 <viewController storyboardIdentifier="NoBuddies" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MZI-UU-nYd" customClass="NoBuddiesFoundViewController" customModule="BeaconTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rjZ-gg-vdi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Image-4" translatesAutoresizingMaskIntoConstraints="NO" id="4am-oC-Xlq">
@@ -113,28 +115,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="e1Q-uJ-Pfq"/>
                     </view>
+                    <navigationItem key="navigationItem" id="HQM-hU-srb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vcg-vw-IhI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="90" y="-553"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="tLd-XQ-DCd">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="97v-jn-SVN" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dFf-6A-SyF">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Apg-b6-wXL" kind="relationship" relationship="rootViewController" id="JGi-j6-MPY"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vcY-x9-QL1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="269.56521739130437" y="765.40178571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7ZW-3x-P9K">
@@ -148,6 +133,10 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fie-Zo-99x"/>
+                        <segue destination="MZI-UU-nYd" kind="show" id="jOE-37-yRC"/>
+                        <segue destination="Apg-b6-wXL" kind="show" id="LCq-lT-LKp"/>
+                        <segue destination="Idk-P6-eFT" kind="show" id="poK-1j-3eI"/>
+                        <segue destination="gJl-GB-YnT" kind="show" id="ckc-ma-AL6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nvn-uq-hvW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
