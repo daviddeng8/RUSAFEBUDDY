@@ -14,7 +14,7 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDelegate {
     var locationManager: CLLocationManager!
     var label: UILabel!
-    var curState = 0
+    var curState = -1
     
     var leftHome = false
     
@@ -81,9 +81,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         
         UIView.animate(withDuration: 0.8) {
             
-            
             if rssi == 1 {
-                self.view.backgroundColor = UIColor.gray
+                if self.curState != 0 {
+                    self.view.backgroundColor = UIColor.gray
+                    self.dismiss(animated: true, completion: nil)
+                    self.curState = 0
+                    let NoBuddiesFoundViewController = self.storyboard?.instantiateViewController(withIdentifier: "NoBuddies") as! NoBuddiesFoundViewController
+                    self.present(NoBuddiesFoundViewController, animated: true)
+                }
+                   
             } else if rssi < -66 {
                 if self.curState != 1 {
                     self.dismiss(animated: true, completion: nil)

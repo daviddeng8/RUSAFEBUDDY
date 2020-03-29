@@ -95,11 +95,33 @@
             </objects>
             <point key="canvasLocation" x="-306" y="2057"/>
         </scene>
+        <!--No Buddies Found View Controller-->
+        <scene sceneID="HdW-jf-4ea">
+            <objects>
+                <viewController storyboardIdentifier="NoBuddies" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MZI-UU-nYd" customClass="NoBuddiesFoundViewController" customModule="BeaconTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rjZ-gg-vdi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Image-4" translatesAutoresizingMaskIntoConstraints="NO" id="4am-oC-Xlq">
+                                <rect key="frame" x="-55" y="-15" width="520" height="924"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="e1Q-uJ-Pfq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vcg-vw-IhI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="90" y="-553"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Image" width="1080" height="1920"/>
         <image name="Image-1" width="1080" height="1920"/>
         <image name="Image-2" width="1080" height="1920"/>
         <image name="Image-3" width="1080" height="1920"/>
+        <image name="Image-4" width="1080" height="1920"/>
     </resources>
 </document>
