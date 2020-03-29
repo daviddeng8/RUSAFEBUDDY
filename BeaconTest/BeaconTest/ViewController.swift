@@ -130,7 +130,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                 }
                 
                    
-            } else if rssi < -70 || (rssi < 65 && curState == 0) {
+            } else if rssi < -70 || (rssi < -65 && curState == 0) {
                 if self.curState != 1 {
                     //self.dismiss(animated: true, completion: nil)
                     self.view.backgroundColor = UIColor.blue
