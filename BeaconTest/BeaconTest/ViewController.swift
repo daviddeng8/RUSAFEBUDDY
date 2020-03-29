@@ -125,7 +125,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                     self.curState = 0
                     let NoBuddiesFoundViewController = self.storyboard?.instantiateViewController(withIdentifier: "NoBuddies") as! NoBuddiesFoundViewController
                     NoBuddiesFoundViewController.isModalInPresentation = true
-                    self.present(NoBuddiesFoundViewController, animated: true)
+                    //self.present(NoBuddiesFoundViewController, animated: true)
+                    show(NoBuddiesFoundViewController, sender: self)
                     //self.navigationController?.pushViewController(NoBuddiesFoundViewController, animated: true)
                 }
                    
@@ -135,7 +136,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                     self.view.backgroundColor = UIColor.blue
                     let YouAreSafeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Safe") as! YouAreSafeViewController
                     YouAreSafeViewController.isModalInPresentation = true
-                    self.present(YouAreSafeViewController, animated: true)
+                    //self.present(YouAreSafeViewController, animated: true)
+                    show(YouAreSafeViewController, sender: self)
                     self.curState = 1
                     self.safeSoundEffect?.play()
                     //self.navigationController?.pushViewController(YouAreSafeViewController, animated: true)
@@ -150,7 +152,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                     self.view.backgroundColor = UIColor.orange
                     let YouAreSlightlyInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "SlightDanger") as! YouAreSlightlyInDangerViewController
                     YouAreSlightlyInDangerViewController.isModalInPresentation = true
-                    self.present(YouAreSlightlyInDangerViewController, animated: true)
+                    //self.present(YouAreSlightlyInDangerViewController, animated: true)
+                    show(YouAreSlightlyInDangerViewController, sender: self)
                     if self.curState != 3 {
                         self.slightDangerSoundEffect?.play()
                     }
@@ -166,7 +169,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                     self.view.backgroundColor = UIColor.red
                     let YouAreInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "Danger") as! YouAreInDangerViewController
                     YouAreInDangerViewController.isModalInPresentation = true
-                    self.present(YouAreInDangerViewController, animated: true)
+                    //self.present(YouAreInDangerViewController, animated: true)
+                    show(YouAreInDangerViewController, sender: self)
                     self.curState = 3
                     self.dangerSoundEffect?.play()
                     //self.navigationController?.pushViewController(YouAreInDangerViewController, animated: true)
