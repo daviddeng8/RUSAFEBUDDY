@@ -121,11 +121,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         self.currentViewController = futureVC
     }
 
-    /*var rssiBound1 = -60
-    var rssiBound2 = -63
-    var rssiBound3 = -67
-    var rssiBound4 = -70*/
-    
     var rssiBound1 = -50
     var rssiBound2 = -53
     var rssiBound3 = -57
