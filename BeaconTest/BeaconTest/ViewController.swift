@@ -14,7 +14,7 @@ import AVFoundation
 //https://www.hackingwithswift.com/example-code/location/how-to-make-an-iphone-transmit-an-ibeacon
 class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDelegate {
     var locationManager: CLLocationManager!
-    var label: UILabel!
+    //var label: UILabel!
     var curState = -1
     
     var leftHome = false
@@ -40,9 +40,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization() //requests location services
         
-        label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.center = CGPoint(x: 160, y: 285)
-        label.textAlignment = .center
+//        label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+//        label.center = CGPoint(x: 160, y: 285)
+//        label.textAlignment = .center
         
         let path1 = Bundle.main.path(forResource: "homeSound.m4a", ofType:nil)!
         let url1 = URL(fileURLWithPath: path1)
@@ -111,25 +111,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         let vc2 = YouAreSlightlyInDangerViewController()
         let vc3 = YouAreInDangerViewController()*/
         
-        UIView.animate(withDuration: 0.8) {
+        //UIView.animate(withDuration: 0.8) {
             
             if rssi == 1 {
                 if self.curState != 0 {
                     self.view.backgroundColor = UIColor.gray
-                    self.dismiss(animated: true, completion: nil)
+                    //self.dismiss(animated: true, completion: nil)
                     self.curState = 0
                     let NoBuddiesFoundViewController = self.storyboard?.instantiateViewController(withIdentifier: "NoBuddies") as! NoBuddiesFoundViewController
-                    self.present(NoBuddiesFoundViewController, animated: true)
+                    //self.present(NoBuddiesFoundViewController, animated: true)
+                    self.navigationController?.pushViewController(NoBuddiesFoundViewController, animated: true)
                 }
                    
             } else if rssi < -66 {
                 if self.curState != 1 {
-                    self.dismiss(animated: true, completion: nil)
+                    //self.dismiss(animated: true, completion: nil)
                     self.view.backgroundColor = UIColor.blue
                     let YouAreSafeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Safe") as! YouAreSafeViewController
-                     self.present(YouAreSafeViewController, animated: true)
+                    //self.present(YouAreSafeViewController, animated: true)
                     self.curState = 1
                     self.safeSoundEffect?.play()
+                    self.navigationController?.pushViewController(YouAreSafeViewController, animated: true)
                 }
                 
                 //self.present(YouAreSafeViewController(), animated: true, completion: nil)
@@ -137,33 +139,37 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                 
             } else if rssi < -60 {
                 if self.curState != 2 {
-                    self.dismiss(animated: true, completion: nil)
+                    //self.dismiss(animated: true, completion: nil)
                     self.view.backgroundColor = UIColor.orange
                     let YouAreSlightlyInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "SlightDanger") as! YouAreSlightlyInDangerViewController
-                    self.present(YouAreSlightlyInDangerViewController, animated: true)
+                    //self.present(YouAreSlightlyInDangerViewController, animated: true)
+                    if self.curState == 1 {
+                        self.slightDangerSoundEffect?.play()
+                    }
                     self.curState = 2
-                    self.slightDangerSoundEffect?.play()
+                    self.navigationController?.pushViewController(YouAreSlightlyInDangerViewController, animated: true)
                 }
                
                // self.present(YouAreSlightlyInDangerViewController(), animated: true, completion: nil)
                 //self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
             } else {
                 if self.curState != 3 {
-                    self.dismiss(animated: true, completion: nil)
+                    //self.dismiss(animated: true, completion: nil)
                     self.view.backgroundColor = UIColor.red
                     let YouAreInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "Danger") as! YouAreInDangerViewController
-                    self.present(YouAreInDangerViewController, animated: true)
+                    //self.present(YouAreInDangerViewController, animated: true)
                     self.curState = 3
                     self.dangerSoundEffect?.play()
+                    self.navigationController?.pushViewController(YouAreInDangerViewController, animated: true)
                 }
                 
                 //self.present(YouAreInDangerViewController(), animated: true, completion: nil)
                 //self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
             }
             
-            self.label.text = "RSSI: \(rssi)"
-            self.view.addSubview(self.label)
-        }
+            //self.label.text = "RSSI: \(rssi)"
+           // self.view.addSubview(self.label)
+       // }
     }
     
     
