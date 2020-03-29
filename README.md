@@ -22,7 +22,7 @@ After downloading the app, tap anywhere to initialize the beacon. It will automa
 ### How to Get Started?
 * Clone this repository
 ```bash
-git clone https://github.com/daviddeng8/RUSAFEBUDDY.git
+git clone https://github.com/daviddeng8/r-u-safe-buddy.git
 ```
 
 * Open "Xcode Project" directory in Xcode and you are good to go!
