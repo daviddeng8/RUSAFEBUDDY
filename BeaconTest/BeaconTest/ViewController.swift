@@ -23,6 +23,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     var dangerSoundEffect: AVAudioPlayer?
     var slightDangerSoundEffect: AVAudioPlayer?
     
+    var currentViewController: UIViewController!
+    
     @IBAction func startScanning(_ sender: UIButton) {
         //getCurrentLocation()
         if (!leftHome) {
@@ -40,6 +42,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentViewController = self
         // Do any additional setup after loading the view.
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -126,10 +129,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                     let NoBuddiesFoundViewController = self.storyboard?.instantiateViewController(withIdentifier: "NoBuddies") as! NoBuddiesFoundViewController
                     NoBuddiesFoundViewController.isModalInPresentation = true
                     NoBuddiesFoundViewController.modalPresentationStyle = .fullScreen
-                    self.present(NoBuddiesFoundViewController, animated: true, completion: nil)
+                    //self.present(NoBuddiesFoundViewController, animated: true, completion: nil)
+                    self.currentViewController.addChild(NoBuddiesFoundViewController)
+                    self.currentViewController.view.addSubview(NoBuddiesFoundViewController.view)
+                    self.currentViewController = NoBuddiesFoundViewController
                     //show(NoBuddiesFoundViewController, sender: self)
                     //self.navigationController?.pushViewController(NoBuddiesFoundViewController, animated: true)
                 }
+                
                    
             } else if rssi < -66 {
                 if self.curState != 1 {
@@ -138,7 +145,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                     let YouAreSafeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Safe") as! YouAreSafeViewController
                     YouAreSafeViewController.isModalInPresentation = true
                     YouAreSafeViewController.modalPresentationStyle = .fullScreen
-                    self.present(YouAreSafeViewController, animated: true, completion: nil)
+                    //self.present(YouAreSafeViewController, animated: true, completion: nil)
+                    self.currentViewController.addChild(YouAreSafeViewController)
+                    self.currentViewController.view.addSubview(YouAreSafeViewController.view)
+                    self.currentViewController = YouAreSafeViewController
                     //show(YouAreSafeViewController, sender: self)
                     self.curState = 1
                     self.safeSoundEffect?.play()
@@ -155,7 +165,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                     let YouAreSlightlyInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "SlightDanger") as! YouAreSlightlyInDangerViewController
                     YouAreSlightlyInDangerViewController.isModalInPresentation = true
                     YouAreSlightlyInDangerViewController.modalPresentationStyle = .fullScreen
-                    self.present(YouAreSlightlyInDangerViewController, animated: true, completion: nil)
+                    //self.present(YouAreSlightlyInDangerViewController, animated: true, completion: nil)
+                    self.currentViewController.addChild(YouAreSlightlyInDangerViewController)
+                    self.currentViewController.view.addSubview(YouAreSlightlyInDangerViewController.view)
+                    self.currentViewController = YouAreSlightlyInDangerViewController
                     //show(YouAreSlightlyInDangerViewController, sender: self)
                     if self.curState != 3 {
                         self.slightDangerSoundEffect?.play()
@@ -173,7 +186,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                     let YouAreInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "Danger") as! YouAreInDangerViewController
                     YouAreInDangerViewController.isModalInPresentation = true
                     YouAreInDangerViewController.modalPresentationStyle = .fullScreen
-                    self.present(YouAreInDangerViewController, animated: true, completion: nil)
+                    //self.present(YouAreInDangerViewController, animated: true, completion: nil)
+                    self.currentViewController.addChild(YouAreInDangerViewController)
+                    self.currentViewController.view.addSubview(YouAreInDangerViewController.view)
+                    self.currentViewController = YouAreInDangerViewController
                     //show(YouAreInDangerViewController, sender: self)
                     self.curState = 3
                     self.dangerSoundEffect?.play()
