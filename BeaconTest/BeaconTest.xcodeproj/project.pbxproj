@@ -19,6 +19,11 @@
 		A9C7CAAD242FF7F400FDDA72 /* YouAreSlightlyInDangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAAC242FF7F400FDDA72 /* YouAreSlightlyInDangerViewController.swift */; };
 		A9C7CAAF242FF8B800FDDA72 /* YouAreInDangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAAE242FF8B800FDDA72 /* YouAreInDangerViewController.swift */; };
 		A9C7CAB324303FF900FDDA72 /* NoBuddiesFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAB224303FF900FDDA72 /* NoBuddiesFoundViewController.swift */; };
+		A9C7CAB624304E4000FDDA72 /* u r in danger, buddy.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A9C7CAB524304E4000FDDA72 /* u r in danger, buddy.m4a */; };
+		A9C7CAB824304E4900FDDA72 /* slightdanger.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A9C7CAB724304E4900FDDA72 /* slightdanger.m4a */; };
+		A9C7CABA24304E6600FDDA72 /* danger.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A9C7CAB924304E6500FDDA72 /* danger.m4a */; };
+		A9C7CABC24304E7000FDDA72 /* safe.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A9C7CABB24304E7000FDDA72 /* safe.m4a */; };
+		A9C7CABE24304E7B00FDDA72 /* homeSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A9C7CABD24304E7B00FDDA72 /* homeSound.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A99BE09C242EBD15002AF98D /* BeaconTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeaconTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A99BE09C242EBD15002AF98D /* u safe, buddy?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "u safe, buddy?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99BE09F242EBD16002AF98D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A99BE0A1242EBD16002AF98D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A99BE0A3242EBD16002AF98D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +62,11 @@
 		A9C7CAAC242FF7F400FDDA72 /* YouAreSlightlyInDangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouAreSlightlyInDangerViewController.swift; sourceTree = "<group>"; };
 		A9C7CAAE242FF8B800FDDA72 /* YouAreInDangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouAreInDangerViewController.swift; sourceTree = "<group>"; };
 		A9C7CAB224303FF900FDDA72 /* NoBuddiesFoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBuddiesFoundViewController.swift; sourceTree = "<group>"; };
+		A9C7CAB524304E4000FDDA72 /* u r in danger, buddy.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "u r in danger, buddy.m4a"; sourceTree = "<group>"; };
+		A9C7CAB724304E4900FDDA72 /* slightdanger.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = slightdanger.m4a; sourceTree = "<group>"; };
+		A9C7CAB924304E6500FDDA72 /* danger.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = danger.m4a; sourceTree = "<group>"; };
+		A9C7CABB24304E7000FDDA72 /* safe.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = safe.m4a; sourceTree = "<group>"; };
+		A9C7CABD24304E7B00FDDA72 /* homeSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = homeSound.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +107,7 @@
 		A99BE09D242EBD15002AF98D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A99BE09C242EBD15002AF98D /* BeaconTest.app */,
+				A99BE09C242EBD15002AF98D /* u safe, buddy?.app */,
 				A99BE0B2242EBD18002AF98D /* BeaconTestTests.xctest */,
 				A99BE0BD242EBD18002AF98D /* BeaconTestUITests.xctest */,
 			);
@@ -107,6 +117,7 @@
 		A99BE09E242EBD15002AF98D /* BeaconTest */ = {
 			isa = PBXGroup;
 			children = (
+				A9C7CAB424304E0800FDDA72 /* Sounds */,
 				A99BE09F242EBD16002AF98D /* AppDelegate.swift */,
 				A9C7CAAA242FF19300FDDA72 /* YouAreSafeViewController.swift */,
 				A99BE0A1242EBD16002AF98D /* SceneDelegate.swift */,
@@ -140,6 +151,18 @@
 			path = BeaconTestUITests;
 			sourceTree = "<group>";
 		};
+		A9C7CAB424304E0800FDDA72 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A9C7CABD24304E7B00FDDA72 /* homeSound.m4a */,
+				A9C7CABB24304E7000FDDA72 /* safe.m4a */,
+				A9C7CAB924304E6500FDDA72 /* danger.m4a */,
+				A9C7CAB724304E4900FDDA72 /* slightdanger.m4a */,
+				A9C7CAB524304E4000FDDA72 /* u r in danger, buddy.m4a */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,7 +180,7 @@
 			);
 			name = BeaconTest;
 			productName = BeaconTest;
-			productReference = A99BE09C242EBD15002AF98D /* BeaconTest.app */;
+			productReference = A99BE09C242EBD15002AF98D /* u safe, buddy?.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A99BE0B1242EBD18002AF98D /* BeaconTestTests */ = {
@@ -244,9 +267,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C7CAB824304E4900FDDA72 /* slightdanger.m4a in Resources */,
+				A9C7CABC24304E7000FDDA72 /* safe.m4a in Resources */,
 				A99BE0AC242EBD17002AF98D /* LaunchScreen.storyboard in Resources */,
 				A99BE0A9242EBD17002AF98D /* Assets.xcassets in Resources */,
 				A99BE0A7242EBD16002AF98D /* Main.storyboard in Resources */,
+				A9C7CABE24304E7B00FDDA72 /* homeSound.m4a in Resources */,
+				A9C7CAB624304E4000FDDA72 /* u r in danger, buddy.m4a in Resources */,
+				A9C7CABA24304E6600FDDA72 /* danger.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,7 +486,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cs32.BeaconTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "u safe, buddy?";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -476,7 +504,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cs32.BeaconTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "u safe, buddy?";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

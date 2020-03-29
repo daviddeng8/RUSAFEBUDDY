@@ -9,6 +9,7 @@ import UIKit
 
 import CoreBluetooth
 import CoreLocation
+import AVFoundation
 
 //https://www.hackingwithswift.com/example-code/location/how-to-make-an-iphone-transmit-an-ibeacon
 class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDelegate {
@@ -17,6 +18,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     var curState = -1
     
     var leftHome = false
+    var homeSoundEffect: AVAudioPlayer?
+    var safeSoundEffect: AVAudioPlayer?
+    var dangerSoundEffect: AVAudioPlayer?
+    var slightDangerSoundEffect: AVAudioPlayer?
     
     @IBAction func startScanning(_ sender: UIButton) {
         //getCurrentLocation()
@@ -24,7 +29,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
             print("tapped on home screen")
             leftHome = true
         }
-        
         
     }
     
@@ -39,6 +43,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
         label.center = CGPoint(x: 160, y: 285)
         label.textAlignment = .center
+        
+        let path1 = Bundle.main.path(forResource: "homeSound.m4a", ofType:nil)!
+        let url1 = URL(fileURLWithPath: path1)
+        
+        let path2 = Bundle.main.path(forResource: "safe.m4a", ofType:nil)!
+        let url2 = URL(fileURLWithPath: path2)
+        
+        let path3 = Bundle.main.path(forResource: "slightdanger.m4a", ofType:nil)!
+        let url3 = URL(fileURLWithPath: path3)
+        
+        let path4 = Bundle.main.path(forResource: "danger.m4a", ofType:nil)!
+        let url4 = URL(fileURLWithPath: path4)
+        
+        do {
+            homeSoundEffect = try AVAudioPlayer(contentsOf: url1)
+            safeSoundEffect = try AVAudioPlayer(contentsOf: url2)
+            slightDangerSoundEffect = try AVAudioPlayer(contentsOf: url3)
+            dangerSoundEffect = try AVAudioPlayer(contentsOf: url4)
+            homeSoundEffect?.play()
+        } catch {
+            
+        }
         
         initLocalBeacon()
     }
@@ -103,6 +129,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                     let YouAreSafeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Safe") as! YouAreSafeViewController
                      self.present(YouAreSafeViewController, animated: true)
                     self.curState = 1
+                    self.safeSoundEffect?.play()
                 }
                 
                 //self.present(YouAreSafeViewController(), animated: true, completion: nil)
@@ -115,6 +142,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                     let YouAreSlightlyInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "SlightDanger") as! YouAreSlightlyInDangerViewController
                     self.present(YouAreSlightlyInDangerViewController, animated: true)
                     self.curState = 2
+                    self.slightDangerSoundEffect?.play()
                 }
                
                // self.present(YouAreSlightlyInDangerViewController(), animated: true, completion: nil)
@@ -126,6 +154,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                     let YouAreInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "Danger") as! YouAreInDangerViewController
                     self.present(YouAreInDangerViewController, animated: true)
                     self.curState = 3
+                    self.dangerSoundEffect?.play()
                 }
                 
                 //self.present(YouAreInDangerViewController(), animated: true, completion: nil)
