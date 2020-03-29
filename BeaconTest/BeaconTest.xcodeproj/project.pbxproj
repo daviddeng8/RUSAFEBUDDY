@@ -18,6 +18,7 @@
 		A9C7CAAB242FF19300FDDA72 /* YouAreSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAAA242FF19300FDDA72 /* YouAreSafeViewController.swift */; };
 		A9C7CAAD242FF7F400FDDA72 /* YouAreSlightlyInDangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAAC242FF7F400FDDA72 /* YouAreSlightlyInDangerViewController.swift */; };
 		A9C7CAAF242FF8B800FDDA72 /* YouAreInDangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAAE242FF8B800FDDA72 /* YouAreInDangerViewController.swift */; };
+		A9C7CAB124303A6200FDDA72 /* NoBuddiesFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAB024303A6200FDDA72 /* NoBuddiesFoundViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		A9C7CAAA242FF19300FDDA72 /* YouAreSafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouAreSafeViewController.swift; sourceTree = "<group>"; };
 		A9C7CAAC242FF7F400FDDA72 /* YouAreSlightlyInDangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouAreSlightlyInDangerViewController.swift; sourceTree = "<group>"; };
 		A9C7CAAE242FF8B800FDDA72 /* YouAreInDangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouAreInDangerViewController.swift; sourceTree = "<group>"; };
+		A9C7CAB024303A6200FDDA72 /* NoBuddiesFoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBuddiesFoundViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				A99BE0A1242EBD16002AF98D /* SceneDelegate.swift */,
 				A99BE0A3242EBD16002AF98D /* ViewController.swift */,
 				A99BE0A5242EBD16002AF98D /* Main.storyboard */,
+				A9C7CAB024303A6200FDDA72 /* NoBuddiesFoundViewController.swift */,
 				A9C7CAAC242FF7F400FDDA72 /* YouAreSlightlyInDangerViewController.swift */,
 				A9C7CAAE242FF8B800FDDA72 /* YouAreInDangerViewController.swift */,
 				A99BE0A8242EBD17002AF98D /* Assets.xcassets */,
@@ -271,6 +274,7 @@
 				A9C7CAAB242FF19300FDDA72 /* YouAreSafeViewController.swift in Sources */,
 				A9C7CAAF242FF8B800FDDA72 /* YouAreInDangerViewController.swift in Sources */,
 				A99BE0A4242EBD16002AF98D /* ViewController.swift in Sources */,
+				A9C7CAB124303A6200FDDA72 /* NoBuddiesFoundViewController.swift in Sources */,
 				A9C7CAAD242FF7F400FDDA72 /* YouAreSlightlyInDangerViewController.swift in Sources */,
 				A99BE0A0242EBD16002AF98D /* AppDelegate.swift in Sources */,
 				A99BE0A2242EBD16002AF98D /* SceneDelegate.swift in Sources */,
