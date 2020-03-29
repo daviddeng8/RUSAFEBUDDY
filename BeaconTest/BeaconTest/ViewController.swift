@@ -14,13 +14,11 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDelegate {
     var locationManager: CLLocationManager!
     var label: UILabel!
-
+    var curState = 0
     
     @IBAction func startScanning(_ sender: UIButton) {
-        
         //getCurrentLocation()
         print ("hi")
-        
     }
     
     
@@ -49,6 +47,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     }
     
     func startScanning() {
+        //randomly generated UUID from terminal
         let uuid = UUID(uuidString: "3C5F9383-4ABC-4D7E-9396-193E28B44125")!
         let beaconRegion = CLBeaconRegion(proximityUUID: uuid, major: 123, minor: 456, identifier: "beacon")
         
@@ -71,24 +70,42 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         let vc3 = YouAreInDangerViewController()*/
         
         UIView.animate(withDuration: 0.8) {
+            
+            
             if rssi == 1 {
                 self.view.backgroundColor = UIColor.gray
             } else if rssi < -66 {
-                self.view.backgroundColor = UIColor.blue
-                let YouAreSafeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Safe") as! YouAreSafeViewController
-                 self.present(YouAreSafeViewController, animated: true)
+                if self.curState != 1 {
+                    self.dismiss(animated: true, completion: nil)
+                    self.view.backgroundColor = UIColor.blue
+                    let YouAreSafeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Safe") as! YouAreSafeViewController
+                     self.present(YouAreSafeViewController, animated: true)
+                    self.curState = 1
+                }
+                
                 //self.present(YouAreSafeViewController(), animated: true, completion: nil)
             //self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
+                
             } else if rssi < -60 {
-                self.view.backgroundColor = UIColor.orange
-                let YouAreSlightlyInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "SlightDanger") as! YouAreSlightlyInDangerViewController
-                self.present(YouAreSlightlyInDangerViewController, animated: true)
+                if self.curState != 2 {
+                    self.dismiss(animated: true, completion: nil)
+                    self.view.backgroundColor = UIColor.orange
+                    let YouAreSlightlyInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "SlightDanger") as! YouAreSlightlyInDangerViewController
+                    self.present(YouAreSlightlyInDangerViewController, animated: true)
+                    self.curState = 2
+                }
+               
                // self.present(YouAreSlightlyInDangerViewController(), animated: true, completion: nil)
                 //self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
             } else {
-                self.view.backgroundColor = UIColor.red
-                let YouAreInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "Danger") as! YouAreInDangerViewController
-                self.present(YouAreInDangerViewController, animated: true)
+                if self.curState != 3 {
+                    self.dismiss(animated: true, completion: nil)
+                    self.view.backgroundColor = UIColor.red
+                    let YouAreInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "Danger") as! YouAreInDangerViewController
+                    self.present(YouAreInDangerViewController, animated: true)
+                    self.curState = 3
+                }
+                
                 //self.present(YouAreInDangerViewController(), animated: true, completion: nil)
                 //self.navigationController?.pushViewController(YouAreSafeViewController(), animated: true)
             }
