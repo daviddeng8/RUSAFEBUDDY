@@ -121,6 +121,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         self.currentViewController = futureVC
     }
 
+    /*var rssiBound1 = -60
+    var rssiBound2 = -63
+    var rssiBound3 = -67
+    var rssiBound4 = -70*/
+    
+    var rssiBound1 = -50
+    var rssiBound2 = -53
+    var rssiBound3 = -57
+    var rssiBound4 = -60
+    
     func updateDistance(_ rssi: Int) {
         //Display "no buddies found" page if no beacons detected (rssi == 1)
         if rssi == 1 {
@@ -131,7 +141,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                 self.curState = 0
             }
         //If much more than 7 feet distance, as extrapolated by RSSI, display safe screen
-        } else if rssi < -70 || (rssi < -67 && curState == 0) {
+        } else if rssi < rssiBound4 || (rssi < rssiBound3 && curState == 0) {
             if self.curState != 1 {
                 let YouAreSafeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Safe") as! YouAreSafeViewController
                 configureDisplaySettings(YouAreSafeViewController)
@@ -139,7 +149,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                 self.safeSoundEffect?.play()
             }
         //If close to 6 feet distance, as extrapolated by RSSI, display slight danger screen
-        } else if rssi < -63 && (rssi > -67 || curState == 0)  {
+        } else if rssi < rssiBound2 && (rssi > rssiBound3 || curState == 0)  {
             if self.curState != 2 {
                 let YouAreSlightlyInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "SlightDanger") as! YouAreSlightlyInDangerViewController
                 configureDisplaySettings(YouAreSlightlyInDangerViewController)
@@ -150,7 +160,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                 self.curState = 2
             }
         //If under 6 feet distance, as extrapolated by RSSI, display danger screen
-        } else if rssi > -60 || curState == 0 {
+        } else if rssi > rssiBound1 || curState == 0 {
             if self.curState != 3 {
                 let YouAreInDangerViewController = self.storyboard?.instantiateViewController(withIdentifier: "Danger") as! YouAreInDangerViewController
                 configureDisplaySettings(YouAreInDangerViewController)
